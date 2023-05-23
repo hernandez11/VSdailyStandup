@@ -13,27 +13,47 @@ function activate(context) {
         return `
             <!DOCTYPE html>
             <html lang="en">
-            <head></head>
+            <head>
+				<link rel="stylesheet" href="./styles.css">
+			</head>
 
             <body>
-                <section class="wrapper">
+                <div>
                     <img src="https://media.tenor.com/FTlGYXuNPvMAAAAM/pug-dog.gif" alt="" >
-                    <form id="reminderForm">
-                        <label for="reminder">Reminder Settings:</label><br>
-                        <input type="number" id="reminderFrequency" name="reminderFrequency"><br>
-                        <input type="submit" value="Submit">
-                    </form> 
-                </section>
+					<h1>Settings</h1>
+					<p>Configure reminder settings to fit your schedule.</p>
+                </div>
+		// divider line here...
+				<div>
 
-                <script>
-                    const form = document.getElementById('reminderForm');
-                    form.addEventListener('submit', (event) => {
-                        event.preventDefault();
-                        const reminderValue = document.getElementById('reminderFrequency').value;
-                        // Handle the selected number (reminderFrequency value) as needed
-                        vscode.postMessage(reminderValue);
-                    });
-                </script>
+					<h2>Recurrence</h2>
+					<span>
+						<form id="reminderForm">
+							<label>Reminder Settings:</label>
+							<input type="number" id="reminderFrequency" name="reminderFrequency">
+						</form> 
+					</span>
+
+					<h2>Reminder</h2>
+					<span>
+						<form id="reminderForm">
+							<label>Reminder Settings:</label>
+							<input type="number" id="reminderFrequency" name="reminderFrequency">
+						</form> 
+					</span>
+
+					<h2>Sync with calendar</h2>
+					<span>
+						<form id="reminderForm">
+							<label>Reminder Settings:</label>
+							<input type="number" id="reminderFrequency" name="reminderFrequency">
+						</form> 
+					</span>
+				</div>
+				<div>
+					// information icon here ...
+					<p>Give feedback about this extention</p>
+				</div>
             </body>
             </html>
         `;
